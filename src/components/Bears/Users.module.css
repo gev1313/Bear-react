@@ -1,0 +1,12 @@
+
+  .kontainer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(247, 243, 243);
+    margin: 50px 150px;
+}
+
+    
+  
