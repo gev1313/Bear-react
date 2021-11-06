@@ -8,7 +8,8 @@ const initialState = {
   },
   singleBear: [],
   resultsFlag: false,
-  error: null
+  error: null,
+  randomBear:[]
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -38,10 +39,21 @@ export default (state = initialState, { type, payload }) => {
   
     case BEARS_ACTION_TYPES.BEARS_GET_SINGLE_REQUEST_SUCCESS : {
       return {
-        
          ...state,
          error : null,
          singleBear:payload.bear,
+         resultsFlag: true,
+      }
+    }
+
+  
+
+    case BEARS_ACTION_TYPES.BEARS_RANDOM_REQUEST_SUCCESS : {
+      return {
+        
+         ...state,
+         error : null,
+         randomBear:payload.random,
          resultsFlag: true,
  
       }
@@ -60,3 +72,4 @@ export default (state = initialState, { type, payload }) => {
       return state;
   }
 };
+

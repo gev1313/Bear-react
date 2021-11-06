@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useMemo} from "react";
 import { useLocation } from "react-router-dom";
 // import { urlParams } from "../../utils/utils";
 import Cards from "../sherd/Cards";
 import styles from "./Users.module.css"
 import { getBearsRequest } from "../../store/action-creaters/bearsActionsCreator";
 import { useDispatch, useSelector } from "react-redux";
+import urlParams from "../../utils/utils";
 
 
-const urlParams = (url) => {
-    const params = {}
-      if(url.indexOf("?") !== -1){
-        const arr = url.slice(1).split('&')
-          for(let i = 0; i<arr.length; i++){
-             let el =  arr[i].split("=")
-             params[el[0]] = el[1]
-          }
-      }
-     return params
-  }
-  
   
 const Bears = () => {
     const { search } = useLocation();
-    const params = urlParams(search);
+    const params = useMemo(()=> urlParams(search),[search]);
     const bearsData = useSelector(state => state.bearsReducer)
     const [page, setPage] = useState(1)
   

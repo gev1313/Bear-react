@@ -7,6 +7,7 @@ import {
 import Header from "./components/Header";
 import Bears from './components/Bears';
 import SingleBear from './components/sherd/SingleBear/SingleBear';
+import RandomBear from './components/sherd/SingleBear/RandomBear/RandomBear';
 
 
 
@@ -21,9 +22,17 @@ function App() {
             <SingleBear/>
           </Route>
 
+
+
           <Route path="/bears">
             <Bears/>
           </Route>
+
+
+          <Route path="/random">
+            <RandomBear/>
+          </Route>
+        
     
         </Switch>
     </Router>

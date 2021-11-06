@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState ,useCallback,memo } from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { useHistory, useParams } from "react-router"
 import styles from "./SingleBear.module.css"
 import { getSinglBearsRequest } from "../../../store/action-creaters/bearsActionsCreator"
+import RandomBear from "./RandomBear/RandomBear"
 
 
 const SingleBear=()=>{
@@ -15,11 +16,9 @@ const SingleBear=()=>{
   
 useEffect( ()=> {
     dispatch(getSinglBearsRequest(id))
-},[])
+},[id])
 
-const onBack = () => {
-    history.goBack()
-}
+const onBack = useCallback(() => {history.goBack()},[history])
 
  return (
      <div >
@@ -67,8 +66,13 @@ const onBack = () => {
                             </ul> 
                           
                       </div>
-                    </div> 
-                       <div className={styles.random}> 'kov</div>   
+                    </div>
+                    <div className={styles.random} >
+                      <div  className={styles.beerRandom}> <RandomBear/></div>   
+                      <div className={styles.beerRandom}> <RandomBear/></div> 
+                      <div className={styles.beerRandom}> <RandomBear/></div> 
+                    </div>
+                  
                    </div>           
                 </div>           
           </div>: 
@@ -80,14 +84,4 @@ const onBack = () => {
       </div>
  )
 }
-export default SingleBear
-
-
-
-
-
-
-
-
-
-
+export default memo(SingleBear)

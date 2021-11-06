@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Search from "../sherd/Search";
 import styles from "./Header.module.css";
-
 
 const Header = () => {
   return (
@@ -11,15 +9,12 @@ const Header = () => {
          <p className = {styles.theBeerBank}>The Beer Bank</p>
          <p className = {styles.findYourFavourite} >Find your favourite beer here</p>
          <Search/>
-
- <a className={styles.home} href="file:///C:/Users/Home/Desktop/Bear/index.html">HOME</a>
-<a className={styles.favourite} href="file:///C:/Users/Home/Desktop/Bear/index.html?favorite" >FAVOURITE</a> 
-
+         <a className={styles.home} href="http://localhost:3000/">HOME</a>
+         <a className={styles.favourite} href="https://www.youtube.com/" >FAVOURITE</a> 
       </div>
     </div>
  )
 }
-
 export default Header
 
 
