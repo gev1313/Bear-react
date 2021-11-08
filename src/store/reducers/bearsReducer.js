@@ -50,10 +50,9 @@ export default (state = initialState, { type, payload }) => {
 
     case BEARS_ACTION_TYPES.BEARS_RANDOM_REQUEST_SUCCESS : {
       return {
-        
          ...state,
          error : null,
-         randomBear:payload.random,
+         randomBear: [...payload.random,...state.randomBear ],
          resultsFlag: true,
  
       }

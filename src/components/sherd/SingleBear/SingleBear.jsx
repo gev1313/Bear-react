@@ -12,8 +12,7 @@ const SingleBear=()=>{
     const history = useHistory()
     const dispatch = useDispatch()
     const bearData = useSelector(state => state.bearsReducer)
-    console.log(bearData,999999999)
-  
+  console.log(bearData,666666666666666666666666666)
 useEffect( ()=> {
     dispatch(getSinglBearsRequest(id))
 },[id])
@@ -68,9 +67,9 @@ const onBack = useCallback(() => {history.goBack()},[history])
                       </div>
                     </div>
                     <div className={styles.random} >
-                      <div  className={styles.beerRandom}> <RandomBear/></div>   
-                      <div className={styles.beerRandom}> <RandomBear/></div> 
-                      <div className={styles.beerRandom}> <RandomBear/></div> 
+                      <div className={styles.beerRandom}> <RandomBear rand={0}/></div>   
+                      <div className={styles.beerRandom}> <RandomBear rand={1}/></div> 
+                      <div className={styles.beerRandom}> <RandomBear rand={2}/></div> 
                     </div>
                   
                    </div>           

@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "../sherd/Search";
 import styles from "./Header.module.css";
+import {Link} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
          <p className = {styles.findYourFavourite} >Find your favourite beer here</p>
          <Search/>
          <a className={styles.home} href="http://localhost:3000/">HOME</a>
-         <a className={styles.favourite} href="https://www.youtube.com/" >FAVOURITE</a> 
+         <Link className={styles.favourite} to="/favorites" >FAVOURITE</Link> 
       </div>
     </div>
  )

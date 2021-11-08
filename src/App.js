@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Bears from './components/Bears';
 import SingleBear from './components/sherd/SingleBear/SingleBear';
 import RandomBear from './components/sherd/SingleBear/RandomBear/RandomBear';
+import Favorites from './components/Favorites/Favorites';
+
 
 
 
@@ -32,7 +34,11 @@ function App() {
           <Route path="/random">
             <RandomBear/>
           </Route>
-        
+
+          <Route path="/favorites">
+            <Favorites/>
+          </Route>
+     
     
         </Switch>
     </Router>
